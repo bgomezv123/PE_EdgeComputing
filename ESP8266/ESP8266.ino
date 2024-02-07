@@ -96,7 +96,7 @@ void reconnect() {
       // Once connected, publish an announcement...
       client.publish("ESP/data", "0");
       // ... and resubscribe
-      client.subscribe("inTopic");
+      client.subscribe("ESP/inTopic");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
