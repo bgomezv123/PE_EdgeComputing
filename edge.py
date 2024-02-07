@@ -84,7 +84,8 @@ def on_messageFromEsp32(client, userdata, message):
         jpg_as_text = base64.b64encode(buffer)
         datos_json["description"] = str(jpg_as_text)[2:-1]
         json_stringESP = json.dumps(datos_json)
-        client_aws.publish("device/2/data", str(json_stringESP))
+        #client_aws.publish("device/2/data", str(json_stringESP))
+        client_aws.publish("video/data", str(json_stringESP))
         print("Imagen guardada en dynamo")
 
     except :
